@@ -52,4 +52,9 @@ public final class ExplicitWaitFactory {
         return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(FrameworkConstants.getExplicitWait()))
                 .until(ExpectedConditions.urlContains(relPath));
     }
+
+    public static void waitForNumberOfElementsToBe(By locator, int size) {
+        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(FrameworkConstants.getExplicitWait()))
+                .until(d -> DriverManager.getDriver().findElements(locator).size() == size);
+    }
 }

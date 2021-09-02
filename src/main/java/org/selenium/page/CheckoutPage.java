@@ -60,6 +60,7 @@ public final class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage clickPlaceOrderButton() {
+        waitForAjaxLoadingToDisappear();
         ExplicitWaitFactory.waitForElementToBeClickable(placeOrderButton).click();
         return this;
     }
@@ -102,6 +103,10 @@ public final class CheckoutPage extends BasePage {
             e.click();
         }
         return this;
+    }
+
+    private void waitForAjaxLoadingToDisappear() {
+        ExplicitWaitFactory.waitForNumberOfElementsToBe(By.cssSelector("[class='blockUI blockOverlay']"), 0);
     }
 }
 
