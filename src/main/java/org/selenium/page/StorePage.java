@@ -18,10 +18,11 @@ public final class StorePage extends BasePage {
         searchElement.clear();
         searchElement.sendKeys(searchTerm);
         searchButtonElement.click();
+        ExplicitWaitFactory.waitForUrlToContain("post_type=product");
         return this;
     }
 
-    public String getSearchResultTitle() {
+    public String getPageTitle() {
         return ExplicitWaitFactory.waitForElementToBeVisible(searchResultTitle).getText();
     }
 
@@ -37,5 +38,10 @@ public final class StorePage extends BasePage {
 
     private By getAddToCartButtonElement(String productName) {
         return By.cssSelector("a[aria-label='Add “"+productName+"” to your cart']");
+    }
+
+    public StorePage load() {
+        loadUrl("/store");
+        return this;
     }
 }

@@ -13,7 +13,6 @@ public final class HomePage extends BasePage {
     }
 
     public HomePage navigateToHomePage() {
-        DriverManager.getDriver().manage().window().maximize();
         loadUrl("/");
         return this;
     }

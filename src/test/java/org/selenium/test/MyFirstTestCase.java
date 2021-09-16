@@ -37,7 +37,7 @@ public final class MyFirstTestCase extends BaseTest {
                 .navigateToStoreUsingMenu()
                 .searchProduct(searchTerm);
         Assert.assertEquals(
-                storePage.getSearchResultTitle(),
+                storePage.getPageTitle(),
                 "Search results: “"+searchTerm+"”"
         );
 
@@ -65,7 +65,7 @@ public final class MyFirstTestCase extends BaseTest {
                 .navigateToStoreUsingMenu()
                 .searchProduct(searchTerm);
         Assert.assertEquals(
-                storePage.getSearchResultTitle(),
+                storePage.getPageTitle(),
                 "Search results: “"+searchTerm+"”"
         );
 

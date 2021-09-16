@@ -13,7 +13,7 @@ import java.net.URL;
 public final class GridTest {
 
     @SneakyThrows
-    @Test
+    @Test(enabled = false)
     public void firstTestInGrid() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");
